@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CV Rodolfo Machco Cueva</title>
+    <style>
+        @page { size: A4; margin: 0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #ffffff; color: #1e293b; }
+        .cv-container { width: 210mm; min-height: 297mm; display: flex; }
+        .left-col { width: 32%; background-color: #0f172a; color: #ffffff; padding: 25px 20px; }
+        .right-col { width: 68%; background-color: #ffffff; padding: 30px 25px; }
+        .photo-box { width: 130px; height: 150px; margin: 0 auto 20px auto; border-radius: 12px; overflow: hidden; border: 3px solid #2563eb; }
+        .photo-box img { width: 100%; height: 100%; object-fit: cover; }
+        .name-title { text-align: center; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 15px; }
+        .name-title h1 { font-size: 15pt; font-weight: 800; color: #ffffff; text-transform: uppercase; }
+        .name-title p { font-size: 8.5pt; color: #38bdf8; font-weight: 600; text-transform: uppercase; margin-top: 4px; }
+        .sidebar-section { margin-bottom: 20px; }
+        .sidebar-title { font-size: 9pt; font-weight: 800; color: #38bdf8; text-transform: uppercase; border-bottom: 1.5px solid #2563eb; padding-bottom: 3px; margin-bottom: 8px; }
+        .sidebar-item { font-size: 8pt; margin-bottom: 6px; }
+        .sidebar-item label { display: block; font-size: 7pt; color: #94a3b8; text-transform: uppercase; font-weight: 700; }
+        .main-section { margin-bottom: 20px; }
+        .main-title { font-size: 10.5pt; font-weight: 800; color: #0f172a; text-transform: uppercase; border-bottom: 2px solid #0284c7; padding-bottom: 4px; margin-bottom: 10px; }
+        .profile-p { font-size: 8.5pt; line-height: 1.4; color: #334155; }
+        .timeline-item { margin-bottom: 10px; padding-left: 10px; border-left: 2px solid #cbd5e1; }
+        .timeline-date { font-size: 7.5pt; font-weight: 800; color: #0284c7; }
+        .timeline-title { font-size: 9pt; font-weight: 700; color: #0f172a; }
+        .timeline-sub { font-size: 8pt; color: #64748b; font-weight: 600; }
+        .skill-bar-item { margin-bottom: 8px; }
+        .skill-label { font-size: 8pt; font-weight: 700; color: #1e293b; margin-bottom: 2px; }
+        .bar-bg { height: 6px; background-color: #e2e8f0; border-radius: 3px; overflow: hidden; }
+        .bar-fill { height: 100%; background: linear-gradient(90deg, #0284c7, #2563eb); }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="left-col">
+            <div class="photo-box">
+                <img src="perfil_graduacion.jpg" onerror="this.onerror=null; this.src='perfil_graduacion.png';" alt="Rodolfo Machco">
+            </div>
+            <div class="name-title">
+                <h1>Rodolfo Machco</h1>
+                <p>Ingeniería Industrial</p>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-title">Información</div>
+                <div class="sidebar-item"><label>Edad</label><span>18 Años</span></div>
+                <div class="sidebar-item"><label>Nacionalidad</label><span>Peruana</span></div>
+                <div class="sidebar-item"><label>Universidad</label><span>UPCH (Cayetano Heredia)</span></div>
+                <div class="sidebar-item"><label>Promoción</label><span>2025-I / Prom. 2029</span></div>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-title">Contacto</div>
+                <div class="sidebar-item"><label>Correo</label><span>rodolfo.machco@cayetano.pe</span></div>
+                <div class="sidebar-item"><label>Ubicación</label><span>Lima / Chimbote, Perú</span></div>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-title">Idiomas</div>
+                <div class="sidebar-item"><label>Español</label><span>Nativo</span></div>
+                <div class="sidebar-item"><label>Inglés</label><span>Intermedio</span></div>
+            </div>
+        </div>
+        <div class="right-col">
+            <div class="main-section">
+                <div class="main-title">Perfil Profesional</div>
+                <p class="profile-p">Estudiante de Ingeniería Industrial en la Universidad Peruana Cayetano Heredia (UPCH). Destacado por un enfoque analítico en la optimización de procesos, gestión estratégica, certificación en metodologías ágiles (Scrum) y sólida base en herramientas digitales.</p>
+            </div>
+            <div class="main-section">
+                <div class="main-title">Formación Académica</div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 – Presente</div>
+                    <div class="timeline-title">Grado en Ingeniería Industrial</div>
+                    <div class="timeline-sub">Universidad Peruana Cayetano Heredia (UPCH)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Julio 2026</div>
+                    <div class="timeline-title">Curso de Especialización en Excel</div>
+                    <div class="timeline-sub">Formación Virtual Certificada</div>
+                </div>
+            </div>
+            <div class="main-section">
+                <div class="main-title">Certificaciones</div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Junio 2025</div>
+                    <div class="timeline-title">Scrum Foundation Professional Certificate</div>
+                    <div class="timeline-sub">Certiprof Certified</div>
+                </div>
+            </div>
+            <div class="main-section">
+                <div class="main-title">Competencias Clave</div>
+                <div class="skill-bar-item"><div class="skill-label">Optimización de Procesos (88%)</div><div class="bar-bg"><div class="bar-fill" style="width: 88%;"></div></div></div>
+                <div class="skill-bar-item"><div class="skill-label">Metodologías Ágiles Scrum (90%)</div><div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div></div>
+                <div class="skill-bar-item"><div class="skill-label">Desarrollo Web HTML/CSS/JS (82%)</div><div class="bar-bg"><div class="bar-fill" style="width: 82%;"></div></div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
