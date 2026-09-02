@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Dashboard - Angélica Chalas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"></div>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active"><i class="fa-solid fa-chart-pie"></i> Mi Perfil</a>
+                <a href="#" class="nav-item"><i class="fa-solid fa-briefcase"></i> Experiencia</a>
+                <a href="#" class="nav-item"><i class="fa-solid fa-graduation-cap"></i> Educación</a>
+                <a href="#" class="nav-item"><i class="fa-solid fa-star"></i> Habilidades</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            
+            <header class="top-header">
+                <div>
+                    <h1>Mi CV Dashboard</h1>
+                    <p>Bienvenido al perfil profesional de Angélica Chalas</p>
+                </div>
+                <div class="user-profile-mini">
+                    <i class="fa-regular fa-bell"></i>
+                    <img src="foto.png" alt="Miniatura">
+                    <span>Hola Angélica <i class="fa-solid fa-caret-down"></i></span>
+                </div>
+            </header>
+
+            <div class="cards-grid">
+                
+                <div class="card profile-card">
+                    <div class="profile-image-container">
+                        <img src="foto.png" alt="Angélica Chalas">
+                    </div>
+                    
+                    <div class="profile-info">
+                        <div class="profile-header-text">
+                            <h2>Mi perfil</h2>
+                            <span class="status">Asistente Administrativa</span>
+                        </div>
+                        
+                        <div class="info-row">
+                            <span class="label">Nombre</span>
+                            <span class="value">Angélica Chalas</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Teléfono</span>
+                            <span class="value">+1-809-639-9624</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Email</span>
+                            <span class="value">achalassanchez@gmail.com</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Ubicación</span>
+                            <span class="value">Bella Vista, D.N.</span>
+                        </div>
+
+                        <div class="action-container">
+                            <button id="downloadBtn" class="btn-gradient">
+                                <i class="fa-solid fa-download"></i> Descargar CV
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card experience-card">
+                    <div class="card-header">
+                        <h2>Experiencia Laboral</h2>
+                        <button class="btn-icon"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    
+                    <div class="list-item">
+                        <div class="item-details">
+                            <strong>Stimikids (Asistente Educativo)</strong>
+                            <p>Apoyo educativo, recreativo y acompañamiento integral.</p>
+                        </div>
+                        <span class="badge badge-pink">Educación</span>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="item-details">
+                            <strong>Sweet Clóset (Vendedora/Cajera)</strong>
+                            <p>Atención, manejo de caja y control de inventario.</p>
+                        </div>
+                        <span class="badge badge-green">Ventas</span>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="item-details">
+                            <strong>Centro Médico Real (Secretaria)</strong>
+                            <p>Recepción de pacientes, agenda y archivo.</p>
+                        </div>
+                        <span class="badge badge-orange">Administración</span>
+                    </div>
+                </div>
+
+                <div class="card education-card">
+                    <div class="card-header">
+                        <h2>Educación y Habilidades</h2>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="item-details">
+                            <strong>Licenciatura en Educación Inicial</strong>
+                            <p>Estudiante Universitaria</p>
+                        </div>
+                        <span class="badge badge-green">En curso</span>
+                    </div>
+
+                    <div class="list-item">
+                        <div class="item-details">
+                            <strong>Cursos y Talleres</strong>
+                            <p>Secretaria Ejecutiva, Cajera, Estimulación Temprana</p>
+                        </div>
+                        <span class="badge badge-green">Completado</span>
+                    </div>
+                    
+                    <div class="skills-tags">
+                        <span class="tag">Atención al cliente</span>
+                        <span class="tag">Paquete Office</span>
+                        <span class="tag">Trabajo en equipo</span>
+                        <span class="tag">Organización</span>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

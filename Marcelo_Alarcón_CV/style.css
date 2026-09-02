@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f4f5f8;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Formas abstractas de fondo */
+.bg-shape {
+    position: absolute;
+    z-index: -1;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    filter: blur(60px);
+    opacity: 0.8;
+}
+
+.shape-1 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(45deg, #ff007f, #ff7e5f);
+    bottom: -100px;
+    right: -50px;
+}
+
+.shape-2 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(45deg, #fbc2eb, #a6c1ee);
+    top: -50px;
+    right: 20%;
+    opacity: 0.5;
+}
+
+/* Contenedor principal del Dashboard */
+.dashboard-container {
+    width: 95%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    display: flex;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    overflow: hidden;
+    min-height: 80vh;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+    width: 220px;
+    background-color: #fff;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #eee;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    margin-bottom: 40px;
+}
+
+.logo-icon {
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(135deg, #ff007f, #ff7e5f);
+    border-radius: 10px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-item {
+    padding: 15px 30px;
+    text-decoration: none;
+    color: #888;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: #ff007f;
+    border-left: 4px solid #ff007f;
+    background-color: #fff0f5;
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.main-content {
+    flex: 1;
+    padding: 30px 40px;
+    background-color: #f8f9fc;
+}
+
+/* Header */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.top-header h1 {
+    font-size: 24px;
+    color: #222;
+}
+
+.top-header p {
+    font-size: 13px;
+    color: #888;
+    margin-top: 5px;
+}
+
+.user-profile-mini {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.user-profile-mini img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.fa-bell {
+    color: #ccc;
+    font-size: 18px;
+}
+
+/* --- GRID DE TARJETAS --- */
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: auto auto;
+    gap: 25px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-header h2 {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Tarjeta Perfil */
+.profile-card {
+    grid-row: span 2;
+    padding: 0;
+    overflow: hidden;
+}
+
+.profile-image-container img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.profile-info {
+    padding: 25px;
+}
+
+.profile-header-text {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.profile-header-text h2 {
+    font-size: 16px;
+}
+
+.status {
+    font-size: 12px;
+    color: #888;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 12px 0;
+    font-size: 13px;
+}
+
+.info-row .label {
+    color: #888;
+}
+
+.info-row .value {
+    color: #333;
+    font-weight: 500;
+}
+
+/* Botón degradado */
+.action-container {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.btn-gradient {
+    background: linear-gradient(45deg, #ff7e5f, #ff007f);
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(255, 0, 127, 0.3);
+    transition: transform 0.2s;
+    width: 100%;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-2px);
+}
+
+/* Listas (Experiencia/Educación) */
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 15px 0;
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+.item-details strong {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.item-details p {
+    font-size: 12px;
+    color: #888;
+}
+
+/* Badges estilo botones de la imagen */
+.badge {
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.badge-pink { background: linear-gradient(45deg, #ff416c, #ff4b2b); }
+.badge-green { background: linear-gradient(45deg, #00b09b, #96c93d); }
+.badge-orange { background: linear-gradient(45deg, #f7971e, #ffd200); }
+
+/* Botón icono lupa */
+.btn-icon {
+    background: #f4f5f8;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: #888;
+    cursor: pointer;
+}
+
+/* Etiquetas Habilidades */
+.skills-tags {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background: #f0f2f5;
+    color: #555;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        padding: 15px;
+        justify-content: space-between;
+    }
+    .nav-menu {
+        flex-direction: row;
+    }
+    .nav-item span {
+        display: none;
+    }
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .profile-card {
+        grid-row: auto;
+    }
+}
