@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Cine Cayetano | Reserva tus entradas</title>
+
+<link rel="stylesheet" href="styles.css">
+```
+
+</head>
+
+<body>
+
+```
+<!-- ==============================
+     ENCABEZADO
+=============================== -->
+
+<header class="header">
+
+    <div class="container header-content">
+
+        <a href="#" class="logo">
+            <span class="logo-icon">🎬</span>
+            <span>CINE <strong>CAYETANO</strong></span>
+        </a>
+
+        <nav class="nav">
+            <a href="#cartelera">Cartelera</a>
+            <a href="#reserva">Reservar</a>
+
+            <button
+                type="button"
+                id="historyButton"
+                class="history-button"
+            >
+                Mis reservas
+            </button>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- ==============================
+     BANNER PRINCIPAL
+=============================== -->
+
+<section class="hero">
+
+    <div class="hero-background"></div>
+
+    <div class="container hero-content">
+
+        <div class="hero-text">
+
+            <span class="hero-label">
+                CINE CAYETANO
+            </span>
+
+            <h1>
+                Vive el cine<br>
+                <span>como nunca.</span>
+            </h1>
+
+            <p>
+                Elige tu película, selecciona tu horario
+                y reserva tus asientos en pocos pasos.
+            </p>
+
+            <a href="#cartelera" class="hero-button">
+                VER CARTELERA
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     CARTELERA
+=============================== -->
+
+<main>
+
+    <section
+        id="cartelera"
+        class="section"
+    >
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">
+                        AHORA EN CARTELERA
+                    </span>
+
+                    <h2>
+                        Películas disponibles
+                    </h2>
+
+                    <p>
+                        Selecciona una película para comenzar tu reserva.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- FILTROS -->
+
+            <div class="filters">
+
+                <div class="search-box">
+
+                    <span>🔎</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Buscar película..."
+                    >
+
+                </div>
+
+
+                <select id="ratingFilter">
+
+                    <option value="all">
+                        Todas las edades
+                    </option>
+
+                    <option value="APT">
+                        APT
+                    </option>
+
+                    <option value="M14">
+                        M14
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- PELÍCULAS -->
+
+            <div
+                id="moviesGrid"
+                class="movies-grid"
+            >
+            </div>
+
+
+            <div
+                id="noMovies"
+                class="no-movies"
+                style="display: none;"
+            >
+                <div class="no-movies-icon">
+                    🎬
+                </div>
+
+                <h3>
+                    No encontramos películas
+                </h3>
+
+                <p>
+                    Intenta con otro nombre o clasificación.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         RESERVA
+    =============================== -->
+
+    <section
+        id="reserva"
+        class="section reservation-section"
+    >
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    RESERVA ONLINE
+                </span>
+
+                <h2>
+                    Reserva tus entradas
+                </h2>
+
+                <p>
+                    Completa los siguientes pasos para confirmar tu reserva.
+                </p>
+
+            </div>
+
+
+            <div class="reservation-layout">
+
+
+                <!-- ==========================
+                     COLUMNA IZQUIERDA
+                =========================== -->
+
+                <div class="reservation-form">
+
+
+                    <!-- PASO 1 -->
+
+                    <div class="reservation-card">
+
+                        <div class="step-title">
+
+                            <span class="step-number">
+                                1
+                            </span>
+
+                            <div>
+                                <h3>
+                                    Elige tu película
+                                </h3>
+
+                                <p>
+                                    Selecciona una película de la cartelera.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <label for="movieSelect">
+                            Película
+                        </label>
+
+                        <select
+                            id="movieSelect"
+                        >
+
+                            <option value="">
+                                Selecciona una película
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- PASO 2 -->
+
+                    <div class="reservation-card">
+
+                        <div class="step-title">
+
+                            <span class="step-number">
+                                2
+                            </span>
+
+                            <div>
+                                <h3>
+                                    Elige el horario
+                                </h3>
+
+                                <p>
+                                    Selecciona una función disponible.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <label for="scheduleSelect">
+                            Horario
+                        </label>
+
+                        <select
+                            id="scheduleSelect"
+                            disabled
+                        >
+
+                            <option value="">
+                                Selecciona un horario
+                            </option>
+
+                        </select>
+
+
+                        <div
+                            id="scheduleButtons"
+                            class="schedule-buttons"
+                        >
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASO 3 -->
+
+                    <div class="reservation-card">
+
+                        <div class="step-title">
+
+                            <span class="step-number">
+                                3
+                            </span>
+
+                            <div>
+                                <h3>
+                                    Selecciona tus asientos
+                                </h3>
+
+                                <p>
+                                    Puedes seleccionar hasta 6 asientos.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <!-- LEYENDA -->
+
+                        <div class="seat-legend">
+
+                            <div>
+                                <span class="legend-seat available"></span>
+                                Libre
+                            </div>
+
+                            <div>
+                                <span class="legend-seat selected"></span>
+                                Seleccionado
+                            </div>
+
+                            <div>
+                                <span class="legend-seat occupied"></span>
+                                Vendido
+                            </div>
+
+                        </div>
+
+
+                        <!-- PANTALLA -->
+
+                        <div class="cinema-screen">
+                            <span>
+                                PANTALLA
+                            </span>
+                        </div>
+
+
+                        <!-- ASIENTOS -->
+
+                        <div
+                            id="seatMap"
+                            class="seat-map"
+                        >
+                            <p class="empty-seats">
+                                Selecciona una película y un horario.
+                            </p>
+                        </div>
+
+
+                        <div
+                            id="seatCounter"
+                            class="seat-counter"
+                        >
+                            0 seleccionados
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASO 4 -->
+
+                    <div class="reservation-card">
+
+                        <div class="step-title">
+
+                            <span class="step-number">
+                                4
+                            </span>
+
+                            <div>
+                                <h3>
+                                    Tus datos
+                                </h3>
+
+                                <p>
+                                    Necesitamos estos datos para registrar la reserva.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label for="customerName">
+                                    Nombre completo
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="customerName"
+                                    placeholder="Ej. Juan Pérez"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="customerDni">
+                                    DNI
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="customerDni"
+                                    maxlength="8"
+                                    inputmode="numeric"
+                                    placeholder="8 dígitos"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group full">
+
+                                <label for="customerEmail">
+                                    Correo electrónico
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="customerEmail"
+                                    placeholder="ejemplo@correo.com"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="formMessage"
+                            class="form-message"
+                        >
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="confirmButton"
+                            class="confirm-button"
+                        >
+                            CONFIRMAR RESERVA
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==========================
+                     RESUMEN
+                =========================== -->
+
+                <aside class="summary-card">
+
+                    <div class="summary-header">
+
+                        <span>
+                            RESUMEN
+                        </span>
+
+                        <span class="summary-icon">
+                            🎟️
+                        </span>
+
+                    </div>
+
+
+                    <div class="summary-poster">
+
+                        <img
+                            id="summaryPoster"
+                            src="images/pelicula1.jpg"
+                            alt="Película seleccionada"
+                        >
+
+                    </div>
+
+
+                    <div class="summary-content">
+
+                        <h3 id="summaryMovie">
+                            Selecciona una película
+                        </h3>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                Horario
+                            </span>
+
+                            <strong id="summarySchedule">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                Asientos
+                            </span>
+
+                            <strong id="summarySeats">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                Entradas
+                            </span>
+
+                            <strong id="summaryTickets">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-divider"></div>
+
+
+                        <div class="summary-total">
+
+                            <span>
+                                Total
+                            </span>
+
+                            <strong id="summaryTotal">
+                                S/ 0.00
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-note">
+                            Precio por entrada:
+                            <strong>S/ 18.00</strong>
+                        </div>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         HISTORIAL
+    =============================== -->
+
+    <section
+        id="historySection"
+        class="section history-section hidden"
+    >
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    MIS RESERVAS
+                </span>
+
+                <h2>
+                    Historial de reservas
+                </h2>
+
+                <p>
+                    Aquí aparecerán las reservas realizadas desde este dispositivo.
+                </p>
+
+            </div>
+
+
+            <div
+                id="reservationHistory"
+                class="reservation-history"
+            >
+            </div>
+
+
+            <button
+                type="button"
+                id="clearHistoryButton"
+                class="clear-history-button"
+            >
+                ELIMINAR HISTORIAL
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ==============================
+     MODAL DE CONFIRMACIÓN
+=============================== -->
+
+<div
+    id="confirmationModal"
+    class="modal"
+>
+
+    <div class="modal-content">
+
+        <button
+            type="button"
+            id="closeModal"
+            class="modal-close"
+            aria-label="Cerrar"
+        >
+            ×
+        </button>
+
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+
+        <h2>
+            ¡Reserva confirmada!
+        </h2>
+
+        <p class="modal-subtitle">
+            Tu reserva ha sido registrada correctamente.
+        </p>
+
+
+        <div class="reservation-ticket">
+
+            <div class="ticket-code">
+
+                <span>
+                    CÓDIGO DE RESERVA
+                </span>
+
+                <strong id="reservationCode">
+                    CAY-000000
+                </strong>
+
+            </div>
+
+
+            <div class="ticket-row">
+
+                <span>
+                    Película
+                </span>
+
+                <strong id="confirmationMovie">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="ticket-row">
+
+                <span>
+                    Horario
+                </span>
+
+                <strong id="confirmationSchedule">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="ticket-row">
+
+                <span>
+                    Asientos
+                </span>
+
+                <strong id="confirmationSeats">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="ticket-row">
+
+                <span>
+                    Cliente
+                </span>
+
+                <strong id="confirmationCustomer">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="ticket-total">
+
+                <span>
+                    TOTAL
+                </span>
+
+                <strong id="confirmationTotal">
+                    S/ 0.00
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="newReservationButton"
+            class="new-reservation-button"
+        >
+            HACER OTRA RESERVA
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ==============================
+     PIE DE PÁGINA
+=============================== -->
+
+<footer class="footer">
+
+    <div class="container footer-content">
+
+        <div>
+
+            <div class="footer-logo">
+                🎬 CINE CAYETANO
+            </div>
+
+            <p>
+                Tu experiencia cinematográfica comienza aquí.
+            </p>
+
+        </div>
+
+
+        <div class="footer-info">
+
+            <span>
+                © 2026 Cine Cayetano
+            </span>
+
+            <span>
+                Sistema de reservas académico
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="script.js"></script>
+```
+
+</body>
+</html>
