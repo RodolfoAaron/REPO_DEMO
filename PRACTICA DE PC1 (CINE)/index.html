@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine Plaza Norte - Reservas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- PANTALLA 1: CARTELERA -->
+    <div id="view-movies">
+        <header class="top-bar">
+            <div class="logo">🍿 Cine Plaza Norte</div>
+            <nav>
+                <a href="#">Inicio</a>
+                <a href="#">Películas</a>
+                <a href="#">Cines</a>
+            </nav>
+        </header>
+
+        <div class="movies-container">
+            <h1>PLAZA NORTE - LIMA</h1>
+            
+            <!-- Simulador de fechas (se llena con JS) -->
+            <div id="dates-carousel" class="dates-carousel"></div>
+
+            <!-- Lista de películas (se inyecta con JS) -->
+            <div id="movie-list" class="movie-list"></div>
+        </div>
+    </div>
+
+    <!-- PANTALLA 2: SELECCIÓN DE ASIENTOS -->
+    <div id="view-seats" class="hidden">
+        <header class="top-bar seat-header">
+            <button id="btn-back" class="btn-back"> < Atrás </button>
+            <div class="timer">TE QUEDAN <br><span id="countdown">05:00</span></div>
+        </header>
+
+        <div class="booking-container">
+            <!-- Panel izquierdo: Detalles -->
+            <div class="movie-details-panel">
+                <img id="detail-poster" src="" alt="Poster">
+                <h2 id="detail-title">TÍTULO</h2>
+                <p id="detail-info">Duración | Edad</p>
+                <h3>PLAZA LIMA SUR</h3>
+                <p>📅 <span id="detail-date">Fecha</span></p>
+                <p>🕒 <span id="detail-time">Hora</span></p>
+                <!-- Aquí está el cambio para la sala dinámica -->
+                <p>💺 SALA: <span id="detail-room">00</span></p>
+            </div>
+
+            <!-- Panel derecho: Asientos -->
+            <div class="seat-map-panel">
+                <div class="screen-indicator">PANTALLA</div>
+                
+                <div class="seat-grid" id="seat-grid"></div>
+
+                <div class="legend">
+                    <div class="legend-item"><div class="seat-circle selected"></div> Seleccionada</div>
+                    <div class="legend-item"><div class="seat-circle occupied"></div> Ocupada</div>
+                    <div class="legend-item"><div class="seat-circle"></div> Libre</div>
+                </div>
+
+                <div class="checkout-section">
+                    <div class="checkout-details">
+                        <div>Subtotal: S/ <span id="subtotal">0.00</span></div>
+                        <div>Descuento (-10%): S/ <span id="discount">0.00</span></div>
+                        <p class="total-text">Total a pagar: S/ <span id="total-price">0.00</span></p>
+                    </div>
+                    <form id="booking-form">
+                        <input type="text" id="buyer-name" placeholder="Tu nombre y apellido" required>
+                        <button type="submit" class="btn-confirm">Comprar Entradas</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
